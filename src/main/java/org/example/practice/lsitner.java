@@ -1,8 +1,5 @@
 package org.example.practice;
 import javax.swing.*;
-
-import org.example.table.SimpleTableGUI;
-
 import java.awt.*;
 
 public class lsitner extends JFrame {
