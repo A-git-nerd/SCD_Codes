@@ -1,5 +1,7 @@
 package org.example.annotation;
 
+import java.lang.reflect.Method;
+
 public class AnnotationDemo {
     public static void main(String[] args) {
         Class<StudentWithHeader> cls = StudentWithHeader.class;
@@ -9,6 +11,10 @@ public class AnnotationDemo {
             System.out.println("  className: " + hdr.className());
             System.out.println("  author: " + hdr.author());
             System.out.println("  dateCreated: " + hdr.dateCreated());
+
+            for(Method method:hdr.annotationType().getDeclaredMethods()){
+                method.getName();
+            }
         } else {
             System.out.println("No @Header annotation present on " + cls.getSimpleName());
         }
