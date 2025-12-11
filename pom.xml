@@ -93,7 +93,8 @@
         </execution>
     </executions>
     <configuration>
-        <mainClass>org.example.javaFx.HelloFx2</mainClass>
+    <!-- if i want to run javaFx/HelloFx2 class then it will be "org.example.javaFx.HelloFx2"-->
+        <mainClass>org.example.javaFx.panes.Panes</mainClass>
     </configuration>
 </plugin>
 
