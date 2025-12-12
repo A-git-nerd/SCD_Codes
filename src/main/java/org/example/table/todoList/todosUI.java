@@ -1,5 +1,7 @@
 package org.example.table.todoList;
 
+import org.example.jdbc.TodoDB;
+
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
@@ -7,6 +9,7 @@ import javax.swing.table.AbstractTableModel;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.Hashtable;
 import java.util.List;
 
 //model class
@@ -98,6 +101,7 @@ class RowSelectionListener implements ListSelectionListener {
 public class todosUI extends JFrame {
     private JTable todoTb;
     private TodoModel todoMd;
+    private TodoDB todoDB = new TodoDB();
 
     //ui
     public todosUI() {
@@ -144,6 +148,10 @@ public class todosUI extends JFrame {
             Todo t = new Todo(name, "X");
             todoMd.addTodo(t);
             fieldName.setText("");
+            Hashtable<String, String> ht = new Hashtable<>();
+            ht.put("name", t.getName());
+            ht.put("status", t.getStatus());
+            todoDB.insert(ht);
         });
 
         btnEdit.addActionListener(e -> {
@@ -155,14 +163,20 @@ public class todosUI extends JFrame {
                 String newName2 = JOptionPane.showInputDialog(this, "Edit Status:", currVal2);
                 todoMd.set(newName1, newName2, r);
                 todoMd.fireTableRowsUpdated(r, r);
+                Hashtable<String, String> ht = new Hashtable<>();
+                ht.put("name", newName1);
+                ht.put("status", newName2);
+                todoDB.edit(currVal1, ht);
             }
         });
 
         btnDel.addActionListener(e -> {
             int r = todoTb.getSelectedRow();
+            String currVal1 = (String) todoTb.getValueAt(r, 0);
             if (r >= 0) {
                 todoMd.remove(r);
                 todoMd.fireTableRowsDeleted(r, r);
+                todoDB.delete(currVal1);
             }
         });
 
