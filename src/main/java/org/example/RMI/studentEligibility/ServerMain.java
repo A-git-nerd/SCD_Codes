@@ -1,4 +1,4 @@
-package org.example.RMI_sockets.studentEligibility;
+package org.example.RMI.studentEligibility;
 
 import javax.naming.Name;
 import java.rmi.Naming;

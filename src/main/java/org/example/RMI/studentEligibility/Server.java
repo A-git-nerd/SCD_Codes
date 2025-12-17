@@ -1,4 +1,4 @@
-package org.example.RMI_sockets.studentEligibility;
+package org.example.RMI.studentEligibility;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
