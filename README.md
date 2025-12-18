@@ -1,5 +1,22 @@
 This repo is for my personal practice for Software Construction and Development course, containing practical implementations and demonstrations of various advanced Java topics.
 
+## Fall 2025
+### Mid Term 1
+1. **Generic Stack**: Implementation of a generic stack data structure.
+2. **Basic GUI Java Swing**: Working with components like buttons, labels, text fields, etc.
+3. **Github**: Version control basics.
+
+### Mid Term 2
+1. **Layered Architecture**: Implementation including `drawImage` within `paintComponent`.
+2. **JUnit**: Unit testing (Tic Tac Toe Game).
+
+### Final
+1. **Question 1**: Draw a line chart with X(Years) and Y(numbers like 0,10,20...) axes.
+2. **Question 2**: Web connectivity using POST method (Login Page) using Swing Worker.
+3. **Question 3**: JUnit testing (something related to courier package).
+4. **Question 4**: Github concepts.
+5. **Question 5**: Release management.
+
 ## Topics Covered
 ### 1. **JavaFX** (`javaFx/`)
 - JavaFX fundamentals (HelloFx, HelloFx2)
@@ -7,7 +24,7 @@ This repo is for my personal practice for Software Construction and Development 
 - FXML integration
 
 ### 2. **Java Swing** (`_graphics/`, `layouts/`, `practice/`)
-- Custom graphics (JStar, JStarDemo, drawImage)
+- Custom graphics (JStar, JStarDemo, drawImage, Fall 2022 paper Question 4)
 - Layout managers:
   - BorderLayout
   - BoxLayout
